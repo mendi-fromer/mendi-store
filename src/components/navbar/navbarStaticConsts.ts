@@ -1,0 +1,1 @@
+export const NAVBAR_ICON = "https://flowbite.com/docs/images/logo.svg";

@@ -1,16 +1,9 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
-import { api } from "~/utils/api";
+import { useUser } from "@clerk/nextjs";
 
 const Home: NextPage = () => {
-  const user = useUser();
-  const SignSpan = (
-    <span className="text-white" style={{ cursor: "pointer" }}>
-      {user.isSignedIn ? "Sign out" : "Sign in"}
-    </span>
-  );
-
+ 
   return (
     <>
       <Head>
@@ -19,11 +12,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-        {user.isSignedIn ? (
-          <SignOutButton>{SignSpan}</SignOutButton>
-        ) : (
-          <SignInButton>{SignSpan}</SignInButton>
-        )}
+        
       </main>
     </>
   );
